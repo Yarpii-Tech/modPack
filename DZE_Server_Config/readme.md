@@ -1,54 +1,54 @@
-;This is a comment
-;Comments above a certain setting will provide it's description
+This is a comment
+Comments above a certain setting will provide it's description
 
-;The format for a setting is 
-;Variable = Value
+The format for a setting is 
+Variable = Value
 
-;If you see a commented line of that form, it means that the setting is optional, and the Value shows the default
-;To change from the default, simply uncomment the line and change the Value
+If you see a commented line of that form, it means that the setting is optional, and the Value shows the default
+To change from the default, simply uncomment the line and change the Value
 
-;This configuration file should be placed inside your server instance's configuration directory (like cfgdayz)
+This configuration file should be placed inside your server instance's configuration directory (like cfgdayz)
 
 [Time]
-;Possible values: Local, Custom, Static
-;You cannot use Static on OFFICIAL Hive, it will just revert to Local
+Possible values: Local, Custom, Static
+You cannot use Static on OFFICIAL Hive, it will just revert to Local
 ```
 Type = Static
 ```
-;If using Custom type, offset from UTC in hours (can be negative as well)
+If using Custom type, offset from UTC in hours (can be negative as well)
 ```
 ;Offset = -8
 ```
-;If using Static type (Hour value always the same on every server start), the value (0-24) to set the Hour to
+If using Static type (Hour value always the same on every server start), the value (0-24) to set the Hour to
 ```
 Hour = 13
 ```
 
 [Database]
-;Hostname or IP of the server to connect to
-;If you leave this line commented or blank, HiveExt will connect to the OFFICIAL Hive, which requires registration
-;See support.dayzmod.com for more information on what OFFICIAL Hive means, what are the rules, etc.
-;If using OFFICIAL hive, the rest of the settings in this section have no effect
+Hostname or IP of the server to connect to
+If you leave this line commented or blank, HiveExt will connect to the OFFICIAL Hive, which requires registration
+See support.dayzmod.com for more information on what OFFICIAL Hive means, what are the rules, etc.
+If using OFFICIAL hive, the rest of the settings in this section have no effect
 ```
 Host = localhost
 ```
 
-;Currently, only MySQL is supported
+Currently, only MySQL is supported
 ```
 Type = MySQL
 ```
 
-;Port to connect to. The default is the default listening port of a server of the selected Type
-;Instead of specifying Port, you can specify Socket and set Value to the socket name
+Port to connect to. The default is the default listening port of a server of the selected Type
+Instead of specifying Port, you can specify Socket and set Value to the socket name
 ```
 Port = 3306
 ```
 
-;Database name to connect to.
+Database name to connect to.
 ```
 Database = dayz_epoch
 ```
-;Username to connect with
+Username to connect with
 ```
 Username = dayz
 ```
