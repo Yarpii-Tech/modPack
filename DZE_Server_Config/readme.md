@@ -1,3 +1,6 @@
+## HiveExt.ini
+
+
 This is a comment
 Comments above a certain setting will provide it's description
 
@@ -9,7 +12,7 @@ To change from the default, simply uncomment the line and change the Value
 
 This configuration file should be placed inside your server instance's configuration directory (like cfgdayz)
 
-[Time]
+### [Time]
 Possible values: Local, Custom, Static
 You cannot use Static on OFFICIAL Hive, it will just revert to Local
 ```
@@ -24,9 +27,10 @@ If using Static type (Hour value always the same on every server start), the val
 Hour = 13
 ```
 
-[Database]
+### [Database]
 Hostname or IP of the server to connect to
 If you leave this line commented or blank, HiveExt will connect to the OFFICIAL Hive, which requires registration
+
 See support.dayzmod.com for more information on what OFFICIAL Hive means, what are the rules, etc.
 If using OFFICIAL hive, the rest of the settings in this section have no effect
 ```
@@ -37,13 +41,11 @@ Currently, only MySQL is supported
 ```
 Type = MySQL
 ```
-
 Port to connect to. The default is the default listening port of a server of the selected Type
 Instead of specifying Port, you can specify Socket and set Value to the socket name
 ```
 Port = 3306
 ```
-
 Database name to connect to.
 ```
 Database = dayz_epoch
@@ -56,55 +58,68 @@ Username = dayz
 ```
 Password = ChangeMe
 ```
-;If using OFFICIAL hive, the settings in this section have no effect, appropriate layout will be used
-[Characters]
-;The field name that Player's IDs are stored in (unique per game license)
-;Some table layouts have this as PlayerID, and some as PlayerUID, that's why this is configurable
+If using OFFICIAL hive, the settings in this section have no effect, appropriate layout will be used
+### [Characters]
+The field name that Player's IDs are stored in (unique per game license)
+Some table layouts have this as PlayerID, and some as PlayerUID, that's why this is configurable
+```
 ;IDField = PlayerUID
-;The field name that Player's World Position and rotation is stored in
-;Enables you to run multiple different maps (different instances) off the same character table
+```
+The field name that Player's World Position and rotation is stored in
+Enables you to run multiple different maps (different instances) off the same character table
+```
 ;WSField = Worldspace
+```
 
 ;If using OFFICIAL hive, the settings in this section have no effect, as it will clean up by itself
-[Objects]
+### [Objects]
 ;Which table should the objects be stored and fetched from ?
+```
 ;Table = Object_DATA
+```
 
-;Negative values will disable this feature
-;0 means that ALL empty placed items will be deleted every server restart
-;A positive number is how old (in days) a placed empty item must be, in order for it to be deleted
-;Leaving CleanupPlacedAfterDays below commented (with a ; in front) will NOT disable the cleanup, but will make the objects get cleaned up after the default 6 days.
+Negative values will disable this feature
+0 means that ALL empty placed items will be deleted every server restart
+A positive number is how old (in days) a placed empty item must be, in order for it to be deleted
+Leaving CleanupPlacedAfterDays below commented (with a ; in front) will NOT disable the cleanup, but will make the objects get cleaned up after the default 6 days.
+```
 ;CleanupPlacedAfterDays = 6
-
-;Flag indicating whether hiveext should detect vehicles out of map boundaries (X < 0, or Y > 15360) and reset their position to []
-;Note: YOU MUST have a proper dayz_server.pbo that supports this feature, otherwise you will get script errors
-;You can find that file under the SQF directory for your server version
+```
+Flag indicating whether hiveext should detect vehicles out of map boundaries (X < 0, or Y > 15360) and reset their position to []
+Note: YOU MUST have a proper dayz_server.pbo that supports this feature, otherwise you will get script errors
+You can find that file under the SQF directory for your server version
+```
 ;ResetOOBVehicles = false
-
-;A string of comma separated object class names that are to be cleaned up, after the CleanupPlacedAfterDays period, regardless of inventory
-;This variable was implemented to compensate for door/plot management storing information in the inventory field
-;custom buildables which use the inventory field should be added to this variable
-;If you wish to cleaup locked storage objects, instead of letting them zero out, you can add them to the variable
-;Do not use double quotation marks, only use single quotation marks [']
+```
+A string of comma separated object class names that are to be cleaned up, after the CleanupPlacedAfterDays period, regardless of inventory
+This variable was implemented to compensate for door/plot management storing information in the inventory field
+custom buildables which use the inventory field should be added to this variable
+If you wish to cleaup locked storage objects, instead of letting them zero out, you can add them to the variable
+Do not use double quotation marks, only use single quotation marks [']
+```
 ;MaintenanceObjects = 'Land_DZE_GarageWoodDoorLocked','Land_DZE_LargeWoodDoorLocked','Land_DZE_WoodDoorLocked','CinderWallDoorLocked_DZ','CinderWallDoorSmallLocked_DZ','Plastic_Pole_EP1_DZ'
+```
 
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;							  VG Addition							  ;;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-; Table name for the virtual garage data to be stored in, default table is 'garage'
+Table name for the virtual garage data to be stored in, default table is 'garage'
+```
 ;VGTable = garage
-; Days for a stored vehicle to be cleaned up after, if set to -1 this feature is disabled. Default 35 days
+```
+Days for a stored vehicle to be cleaned up after, if set to -1 this feature is disabled. Default 35 days
+```
 ;CleanupVehStoredDays = 35
-; Log object cleanup DELETE statements (per object), including virtual garage. Default is false
+```
+Log object cleanup DELETE statements (per object), including virtual garage. Default is false
+```
 ;LogObjectCleanup = false
-
+```
 ;If using OFFICIAL hive, the settings in this section have no effect, it will manage objects on its own
-[ObjectDB]
-;Setting this to true separates the Object fetches from the Character fetches
-;That means that the Object Table must be on this other database
+### [ObjectDB]
+Setting this to true separates the Object fetches from the Character fetches
+That means that the Object Table must be on this other database
+```
 ;Use = false
-
-;The settings here have the same meaning as in [Database], and are only used if the setting above is set to true
+```
+The settings here have the same meaning as in [Database], and are only used if the setting above is set to true
 ```
 ;Type = MySQL
 ;Host = localhost
@@ -113,10 +128,10 @@ Password = ChangeMe
 ;Username = root
 ;Password = 
 ```
-[Logger]
-;Possible values: trace, debug, information, notice, warning, error, critical, fatal, none
-;They are sorted by importance (low to high), with trace being the most verbose, and none would turn off logging
-;This controls both the file output level, and the console output level
+### [Logger]
+Possible values: trace, debug, information, notice, warning, error, critical, fatal, none
+They are sorted by importance (low to high), with trace being the most verbose, and none would turn off logging
+This controls both the file output level, and the console output level
 ```
 ;Level = trace
 ```
