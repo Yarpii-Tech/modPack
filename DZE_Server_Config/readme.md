@@ -128,8 +128,8 @@ Password = ChangeMe
 ```
 ;ConsoleLevel = trace
 ```
-;By default, the HiveExt console log output will go to the Arma2 server window, with colour highlighing by importance
-;If you want to use the old style, separate windows console window for the HiveExt log output, set this option to true
+By default, the HiveExt console log output will go to the Arma2 server window, with colour highlighing by importance.
+If you want to use the old style, separate windows console window for the HiveExt log output, set this option to true.
 ```
 ;SeparateConsole = false
 ```
