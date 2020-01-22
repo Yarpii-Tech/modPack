@@ -1,16 +1,20 @@
 ## HiveExt.ini
 
 
-This is a comment
-Comments above a certain setting will provide it's description
+When use `;` front of a text in `HiveExt.ini` it will disable the text.
 
-The format for a setting is 
-Variable = Value
-
+ACTIVE
+```
+Variable = Value 
+```
+DISABLED
+```
+;Variable = Value
+```
 If you see a commented line of that form, it means that the setting is optional, and the Value shows the default
 To change from the default, simply uncomment the line and change the Value
 
-This configuration file should be placed inside your server instance's configuration directory (like cfgdayz)
+#### This configuration file should be placed inside your server instance's configuration directory (like cfgdayz)
 
 ### [Time]
 Possible values: Local, Custom, Static
@@ -54,7 +58,7 @@ Username to connect with
 ```
 Username = dayz
 ```
-;Password to authenticate with (default is blank)
+Password to authenticate with (default is blank)
 ```
 Password = ChangeMe
 ```
@@ -71,9 +75,9 @@ Enables you to run multiple different maps (different instances) off the same ch
 ;WSField = Worldspace
 ```
 
-;If using OFFICIAL hive, the settings in this section have no effect, as it will clean up by itself
+If using OFFICIAL hive, the settings in this section have no effect, as it will clean up by itself
 ### [Objects]
-;Which table should the objects be stored and fetched from ?
+Which table should the objects be stored and fetched from ?
 ```
 ;Table = Object_DATA
 ```
@@ -112,7 +116,7 @@ Log object cleanup DELETE statements (per object), including virtual garage. Def
 ```
 ;LogObjectCleanup = false
 ```
-;If using OFFICIAL hive, the settings in this section have no effect, it will manage objects on its own
+If using OFFICIAL hive, the settings in this section have no effect, it will manage objects on its own
 ### [ObjectDB]
 Setting this to true separates the Object fetches from the Character fetches
 That means that the Object Table must be on this other database
