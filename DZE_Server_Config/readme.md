@@ -1,4 +1,4 @@
-## HiveExt.ini
+# Some Explaining
 
 
 When use `;` front of a text in `HiveExt.ini` it will disable the text.
@@ -15,7 +15,7 @@ If you see a commented line of that form, it means that the setting is optional,
 To change from the default, simply uncomment the line and change the Value
 
 #### This configuration file should be placed inside your server instance's configuration directory (like cfgdayz)
-
+## HiveExt.ini
 ### [Time]
 Possible values: Local, Custom, Static
 You cannot use Static on OFFICIAL Hive, it will just revert to Local
