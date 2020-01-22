@@ -120,11 +120,11 @@ Password = ChangeMe
 ```
 ;Level = trace
 ```
-;Uncomment this option to override the logging level for the console only
-;The specified level can only be higher than the global one, setting lower values will have no effect
-;So for example, if you want to have information-level logs in your file, but only warning-level and higher in your console
-;You would uncomment this option and set it to warning
-;Leaving it commented out means there's no special level for the console, so it will just use the global one
+Uncomment this option to override the logging level for the console only.
+The specified level can only be higher than the global one, setting lower values will have no effect.
+So for example, if you want to have information-level logs in your file, but only warning-level and higher in your console.
+You would uncomment this option and set it to warning.
+Leaving it commented out means there's no special level for the console, so it will just use the global one
 ```
 ;ConsoleLevel = trace
 ```
