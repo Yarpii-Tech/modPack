@@ -31,6 +31,6 @@ So at the end it will look something like this:
 #include "\z\addons\dayz_server\compile\server_toggle_debug.hpp"
 waitUntil {!isNil "bis_fnc_init"};
 ```
-3. Done..
+3. Repack you <code>dayz_server</code> and done.
 
 
