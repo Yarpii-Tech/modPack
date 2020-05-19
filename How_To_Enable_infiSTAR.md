@@ -20,7 +20,7 @@ server
        └── DayZ_Epoch_11.Chernarus.pbo
 ```
 
-2. In <code>Arma 2 OA\@dayz_epoch_server\addons\dayz_server\init\server_functions.sqf</code> find the following line and uncomment it:
+2. In <code>@dayz_epoch_server\addons\dayz_server\init\server_functions.sqf</code> find the following line and uncomment it:
 ```sqf
 //[] execVM "\a2_infiSTAR\AH.sqf";
 ```
