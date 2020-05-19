@@ -1,6 +1,5 @@
-//[] execVM "\z\addons\dayz_server\infiSTAR\AH.sqf";
+//[] execVM "\a2_infiSTAR\AH.sqf";
 #include "\z\addons\dayz_server\compile\server_toggle_debug.hpp"
-//[] execVM "\infiSTAR\AH.sqf";
 waitUntil {!isNil "bis_fnc_init"};
 
 BIS_MPF_remoteExecutionServer = {
