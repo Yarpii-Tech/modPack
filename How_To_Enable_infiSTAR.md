@@ -24,3 +24,13 @@ server
 ```sqf
 //[] execVM "\a2_infiSTAR\AH.sqf";
 ```
+
+So at the end it will look something like this:
+```sqf
+[] execVM "\a2_infiSTAR\AH.sqf";
+#include "\z\addons\dayz_server\compile\server_toggle_debug.hpp"
+waitUntil {!isNil "bis_fnc_init"};
+```
+3. Done..
+
+
